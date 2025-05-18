@@ -39,7 +39,8 @@ This project creates a simple Wi-Fi web server using the **ESP32** (with ESP-IDF
 esp32-webserver/
 ├── main/
 │ ├── main.c # Contains web server logic, GPIO control, HTML
-│ └── CMakeLists.txt
+│      └── CMakeLists.txt
+
 ├── sdkconfig # ESP-IDF build config
 ├── README.md # Project documentation
 └── ...
