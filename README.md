@@ -50,7 +50,7 @@ This project creates a simple Wi-Fi web server using the **ESP32** (with ESP-IDF
 
 ```bash
 idf.py set-target esp32
-idf.py menuconfig   # (Optional) configure project
+idf.py menuconfig   # (in sdkconfig use Custom partition table csv) configure project
 idf.py build
 idf.py -p /dev/ttyUSB0 flash
 idf.py monitor
