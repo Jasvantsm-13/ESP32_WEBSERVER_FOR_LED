@@ -32,7 +32,7 @@ This project creates a simple Wi-Fi web server using the **ESP32** (with ESP-IDF
 - HTML page served from ESP32
 - Two buttons to control LEDs
 - LED status shown on the page
-- Non-volatile storage of LED state (optional)
+- Non-volatile storage of LED state 
 
 ### File Structure
 
