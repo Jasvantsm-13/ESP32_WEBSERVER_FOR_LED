@@ -1,11 +1,61 @@
-ESP-IDF template app
-====================
+# ESP32 Web Server for LED Control
 
-This is a template application to be used with [Espressif IoT Development Framework](https://github.com/espressif/esp-idf).
+This project creates a simple Wi-Fi web server using the **ESP32** (with ESP-IDF) to control two LEDs (Green and Red) connected to GPIO16 and GPIO17. The interface is styled using HTML and CSS, and the ESP32 runs in SoftAP mode so users can connect directly to it.
 
-Please check [ESP-IDF docs](https://docs.espressif.com/projects/esp-idf/en/latest/get-started/index.html) for getting started instructions.
+---
 
-*Code in this repository is in the Public Domain (or CC0 licensed, at your option.)
-Unless required by applicable law or agreed to in writing, this
-software is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-CONDITIONS OF ANY KIND, either express or implied.*
+## Project Preview
+
+- ESP32 acts as a Wi-Fi hotspot
+- Web interface to control Green and Red LEDs
+- LED states displayed and toggleable
+- Modern styled interface with responsive design
+
+---
+
+## Hardware Setup
+
+| Component       | Connection             |
+|----------------|------------------------|
+| ESP32 Pin 16   | → 220Ω → Green LED → GND |
+| ESP32 Pin 17   | → 220Ω → Red LED → GND   |
+
+**Power:** Use a USB cable or battery to power the ESP32.
+
+---
+
+## Software Overview
+
+### Features:
+
+- SoftAP mode (ESP32 creates its own Wi-Fi)
+- HTML page served from ESP32
+- Two buttons to control LEDs
+- LED status shown on the page
+- Non-volatile storage of LED state (optional)
+
+### File Structure
+
+esp32-webserver/
+├── main/
+│ ├── main.c # Contains web server logic, GPIO control, HTML
+│ └── CMakeLists.txt
+├── sdkconfig # ESP-IDF build config
+├── README.md # Project documentation
+└── ...
+## How to Build and Flash
+
+### Prerequisites
+
+- [ESP-IDF](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/)
+- ESP32 board
+- USB cable
+
+### Build Instructions
+
+```bash
+idf.py set-target esp32
+idf.py menuconfig   # (Optional) configure project
+idf.py build
+idf.py -p /dev/ttyUSB0 flash
+idf.py monitor
